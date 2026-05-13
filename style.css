@@ -1,0 +1,736 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --bg: #FEFFED;
+    --primary: #2563eb;
+    --secondary: #3b82f6;
+    --accent: #60a5fa;
+
+    --text: #000000;
+    --text-soft: #cbd5e1;
+
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================
+   BODY
+========================= */
+/* Import Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;   /* more breathing room */
+    font-size: 1rem;    /* clean base size */
+}
+section {
+  opacity: 0;                /* start hidden */
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible {
+  opacity: 1;                /* fade in */
+  transform: translateY(0);
+}
+
+
+/* Headings */
+h1 {
+    font-weight: 700;
+    font-size: 2.75rem;   /* bigger, bolder */
+    letter-spacing: 0.5px;
+    text-transform: none; /* keep natural casing */
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.hero h1 {
+    font-size: 42px;       /* adjust size */
+    font-weight: bold;
+    margin: 0 0 10px 0;    /* remove top margin, small bottom spacing */
+    line-height: 1.2;      /* tighter vertical spacing */
+}
+
+.hero h3 {
+    font-size: 28px;
+    margin: 0 0 10px 0;    /* same idea */
+    line-height: 1.2;
+}
+
+.hero p {
+    margin: 0 0 15px 0;    /* consistent spacing */
+    line-height: 1.5;
+}
+
+/* =========================
+   HEADER (GLASS)
+========================= */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  padding: 4px 10px;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Logo container */
+.mobile-logo {
+    display: flex;
+    align-items: left;   /* vertically align logo and text */
+    gap: 10px;             /* space between logo and text */
+}
+
+/* Logo image */
+.logo {
+    width: 100px;
+}
+
+
+
+/* =========================
+   NAV
+========================= */
+nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-left: 25px;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: var(--primary);
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    position: relative;
+    background-image: url("bg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 75vh;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+    color: white;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(75, 75, 75, 0.7),
+        rgba(0,0,0,0.4)
+    );
+}
+
+.hero * {
+    position: relative;
+}
+/* Initial Button Styling */
+.hero .button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #25D366; /* Green color */
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid #25D366;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hover State */
+.hero .button:hover {
+  background-color: #ffffff; /* White background on hover */
+  color: #25D366; /* Green text on hover */
+  border: 2px solid #25D366;
+}
+
+
+/* =========================
+   MAIN SECTIONS
+========================= */
+main {
+    padding: 40px;
+}
+
+section {
+    margin-bottom: 40px;
+
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    padding: 30px;
+
+    transition: 0.3s;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(37,99,235,0.2);
+}
+
+/* =========================
+   PARAGRAPH FIX (IMPORTANT)
+========================= */
+p {
+    text-align: left;
+}
+
+
+/* OPTIONAL COLOR VARIANTS */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.section-blue {
+    background: none;
+    margin: 0;
+    padding: 60px 20px;
+    border: none;
+    border-radius: 0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.section-blue h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    font-style: italic;
+    white-space: normal;
+    overflow: visible;
+    border: none;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+.section-blue p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+
+
+/* =========================
+   HTML-SPECIFIC SECTIONS
+========================= */
+/* White section flat on black site */
+.course-section {
+  background: linear-gradient(135deg, #06061a, #0b3d91);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+  margin: 0;
+}
+
+.course-card {
+  width: 30%;
+  text-align: left;              /* left align everything */
+  background: rgba(255, 255, 255, 0.1); /* glass effect */
+  border: 1px solid #ddd;        /* visible border */
+  border-radius: 12px;           /* rounded card edges */
+  padding: 20px;                 /* visible padding inside */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+.course-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;           /* rounded image */
+  margin-bottom: 15px;
+}
+
+.course-card .label {
+  display: inline-block;
+  background-color: #007BFF;     /* blue badge */
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.course-card h3 {
+  margin: 10px 0;
+  font-size: 1.3em;
+}
+
+.course-card p {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.course-card .btn {
+  display: inline-block;
+  width: 100%;                   /* button fits card width */
+  padding: 14px 0;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
+}
+.course-card .btn:hover {
+  background: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .course-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .course-card {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+}
+
+.services-section {
+  background: linear-gradient(135deg, #06061a, #0b3d91);
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services-header h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.services-header p.center {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+ 
+
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.service-box {
+  background: rgba(255, 255, 255, 0.1); /* glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left; /* left align content */
+}
+
+.service-box h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #e1ff00;
+}
+
+.service-box p {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #f0f0f0;
+}
+
+.services-footer {
+  margin-top: 40px;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background: #25D366; /* WhatsApp green */
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.whatsapp-btn:hover {
+  background: #64d792;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   ABOUT SECTION (GLASS)
+========================= */
+
+.section-about {
+  background: rgba(0, 115, 255, 0.08); /* liquid glass effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 153, 255, 0.25);
+  border-radius: 12px;
+  padding: 60px 40px;
+  margin: 40px 0;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1.2; /* text takes more space */
+  color: #000000;
+}
+
+.about-text h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #00aaff;
+  text-align: left;
+}
+
+.about-text p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background: #25D366; /* WhatsApp green */
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.whatsapp-btn i {
+  margin-right: 8px;
+}
+
+.whatsapp-btn:hover {
+  background: #64d792;
+}
+
+.about-image {
+  flex: 0.8; /* image takes less space */
+  text-align: right;
+}
+
+.about-image img {
+  max-width: 400px;   /* limit image size */
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid rgba(255, 255, 255, 0.4); /* subtle border */
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .about-image img {
+    max-width: 80%; /* smaller on tablet/mobile */
+  }
+}
+
+
+/* =========================
+   BUTTONS (GLOW)
+========================= */
+button,
+a.button {
+    display: inline-block;
+    margin-top: 15px;
+
+    padding: 10px 20px;
+    border-radius: 8px;
+
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+
+    border: none;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* GLOW EFFECT */
+button:hover,
+a.button:hover {
+    background: var(--primary-glow);
+    box-shadow: 0 0 15px var(--primary-glow);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER (GLASS, NOT STICKY)
+========================= */
+footer {
+  margin-top: 40px;
+  padding: 30px;
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: #000000;
+}
+
+footer a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer-contact {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-social {
+  border-bottom: 1px solid var(--border);
+  padding: 15px 0;
+  margin-bottom: 15px;
+}
+
+.footer-social i {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+.footer-copy {
+  margin-top: 10px;
+}
+
+
+
+/* =========================
+   HAMBURGER
+========================= */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    margin-right: 15px; 
+}
+
+
+/* =========================
+   MOBILE NAV
+========================= */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(25px);           
+    -webkit-backdrop-filter: blur(25px);   
+
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0; /* start invisible */
+    transition: right 0.4s ease, opacity 0.4s ease;
+    z-index: 2000;
+}
+
+.mobile-nav.active {
+    right: 0;
+    opacity: 1;
+}
+
+
+
+.mobile-nav a {
+    margin: 15px 0;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+.close-btn {
+    font-size: 28px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none; /* hidden by default */
+}
+
+.mobile-nav.active .close-btn {
+    display: block; /* show when nav is open */
+}
+
+/* =========================
+   WHY IMAGE SPACING
+========================= */
+.why-image {
+    display: block;
+    width: 100%;
+    margin: 40px 0;
+    opacity: 0.9;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+}
+/* =========================
+   CONTACT SECTION RESET
+========================= */
+.section-contact {
+  font-family: 'Poppins', sans-serif; /* override font */
+  background: #000;                   /* pure black background */
+  color: #fff;                        /* white text */
+  margin: 0;
+  padding: 80px 10%;
+  text-align: center;                 /* center all content */
+}
+
+.section-contact h3 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.section-contact p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin: 0 auto 20px auto;           /* center block */
+  max-width: 800px;                   /* keep readable width */
+  text-align: center;
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+  display: inline-block;
+  background: #25D366;                /* WhatsApp green */
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: background none;
+}
+
+.whatsapp-btn i {
+  margin-right: 8px;                  /* space before text */
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;                /* darker green on hover */
+}

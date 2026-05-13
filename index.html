@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mhykey Labs: Digital Skills and Learning Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="logo.png" alt="Mhykey Labs Logo" class="logo">
+    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <title>MHYKEY LABS</title>
+      <style>
+        body {
+          margin: 0;
+          background: #ffffff;
+          color: #fff;
+          font-family: 'Orbitron', sans-serif;
+          /* futuristic font */
+        }
+
+        .header {
+          position: sticky;
+          top: 0;
+          background: none;
+          border: none;
+          box-shadow: none;
+          backdrop-filter: blur(10px);
+          text-align: center;
+          padding: 20px;
+          z-index: 1000;
+        }
+
+        #animated-text {
+          font-size: 20px;
+          font-weight: 600;
+          color: #00e0ff;
+          display: inline-block;
+          overflow: hidden;
+          line-height: 1.2;
+          font-family: 'Orbitron', sans-serif;
+        }
+
+        #animated-text {
+          white-space: nowrap;
+        }
+
+
+        /* Slide left animation */
+        .slide-left {
+          animation: slideLeftOut 1s forwards, slideLeftIn 1s forwards 1s;
+        }
+
+        @keyframes slideLeftOut {
+          from {
+            transform: translateX(0);
+            opacity: 1;
+          }
+
+          to {
+            transform: translateX(-100%);
+            opacity: 0;
+          }
+        }
+
+        @keyframes slideLeftIn {
+          from {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+
+        /* Glitch animation */
+        .glitch {
+          position: relative;
+          animation: glitch 1s;
+          color: #ff00ff;
+        }
+
+        @keyframes glitch {
+          0% {
+            text-shadow: 2px 0 red, -2px 0 blue;
+          }
+
+          20% {
+            text-shadow: -2px 0 red, 2px 0 blue;
+          }
+
+          40% {
+            text-shadow: 2px 0 red, -2px 0 blue;
+          }
+
+          60% {
+            text-shadow: -2px 0 red, 2px 0 blue;
+          }
+
+          80% {
+            text-shadow: 2px 0 red, -2px 0 blue;
+          }
+
+          100% {
+            text-shadow: none;
+          }
+        }
+
+        /* Color change animation */
+        .color-change {
+          animation: colorChange 2s;
+        }
+
+        @keyframes colorChange {
+          0% {
+            color: #ff0000;
+          }
+
+          50% {
+            color: #00ff00;
+          }
+
+          100% {
+            color: #00e0ff;
+          }
+        }
+      </style>
+    </head>
+
+    <body>
+
+      <div class="header">
+        <div id="animated-text"></div>
+      </div>
+
+      <script>
+        const texts = [
+          "RC:9457214",
+          "MHYKEY LABS",
+          "DIGITAL SKILLS",
+          "LEARNING CENTER",
+          "WEBSITE DESIGN",
+          "VIDEO ADVERT",
+          "DOCUMENT DESIGN",
+          "RESUME"
+        ];
+
+        let index = 0;
+        const textElement = document.getElementById("animated-text");
+
+        function showText() {
+          textElement.className = ""; // reset animation
+          textElement.innerText = texts[index];
+
+          // Random animation style
+          const animations = ["glitch", "slide-left", "color-change"];
+          const randomAnim = animations[Math.floor(Math.random() * animations.length)];
+          textElement.classList.add(randomAnim);
+
+          index = (index + 1) % texts.length;
+        }
+
+        setInterval(showText, 3000); // change every 3 seconds
+        showText();
+      </script>
+
+    </body>
+
+    </html>
+
+    <!-- DESKTOP NAV -->
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="learn.html">Learn</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- HAMBURGER (three lines) -->
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobile-nav">
+    <!-- CLOSE BUTTON (X) -->
+    <span class="close-btn" id="close-btn">&times;</span>
+
+    <div class="mobile-logo">
+      <img src="logo.png" alt="Mhykey Labs Logo" class="logo">
+    </div>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="learn.html">Learn</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <section class="hero">
+      <h1>Digital Skills and Learning Center</h1>
+      <h3> MHYKEY LABS</h3>
+      <p>Empowering individuals with the digital skills they need to succeed in today's world.</p>
+      <p>
+        <a href="#my-course" class="button">Learn More</a>
+      </p>
+    </section>
+
+    <section class="section-blue">
+      <h2>WELCOME TO MHYKEY LABS</h2>
+      <p>
+        We train individuals and students in essential digital skills and also provide professional digital services for
+        personal and business needs.
+      </p>
+    </section>
+
+
+    <!-- White Section -->
+    <section class="course-section" id="my-course">
+      <div class="course-card">
+        <img src="graphic.png" alt="Desktop Publishing">
+        <span class="label">Introduction</span>
+        <h3>DESKTOP PUBLISHING</h3>
+        <p>Master the fundamentals of desktop publishing and create professional documents with confidence. Build skills
+          that help you design
+          smarter in 8 weeks.</p>
+        <a href="learn.html" class="btn">Learn more</a>
+      </div>
+
+      <div class="course-card">
+        <img src="doc.png" alt="Graphic & Document Design">
+        <span class="label">Introduction</span>
+        <h3>GRAPHIC & DOCUMENT DESIGN</h3>
+        <p>Unlock the power of the art of creating visually appealing graphics and documents for both personal and
+          professional use in just 10 weeks!</p>
+        <a href="learn.html" class="btn">Learn more</a>
+      </div>
+
+      <div class="course-card">
+        <img src="web.png" alt="Website Design">
+        <span class="label">Introduction</span>
+        <h3>WEBSITE DESIGN (FRONT-END)</h3>
+        <p>Learn the fundamentals of website design and development, and create stunning, responsive websites that work
+          seamlessly across all devices.</p>
+        <a href="learn.html" class="btn">Learn more</a>
+      </div>
+    </section>
+
+    <section class="section-blue">
+
+      <p>
+        Whether you are looking to learn a new skill, improve your digital knowledge, or get a professional service
+        done properly, Mhykey Labs is here to support you every step of the way.
+      </p>
+    </section>
+
+    <section class="services-section">
+      <div class="services-header">
+        <h2>Our Services</h2>
+        <p class="center"> We provide a range of professional digital services designed to meet the needs of
+          individuals, students, small businesses, and established organizations.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-box">
+          <h3>VIDEO ADVERT</h3>
+          <p>Create engaging video adverts that capture attention and deliver your message effectively to your audience.
+          </p>
+        </div>
+
+        <div class="service-box">
+          <h3>WEBSITE DESIGN</h3>
+          <p>Design modern, responsive websites that look great on all devices and help you build a strong online
+            presence.</p>
+        </div>
+
+        <div class="service-box">
+          <h3>GRAPHIC DESIGN</h3>
+          <p>Craft visually appealing graphics that communicate your ideas clearly and make your brand unforgettable.
+          </p>
+        </div>
+
+        <div class="service-box">
+          <h3>RESUME</h3>
+          <p>Build professional resumes that highlight your strengths and help you land your dream job faster.</p>
+        </div>
+      </div>
+
+      <div class="services-footer">
+        <a href="https://wa.me/2348060260581?text=Hello%2C%20I%20would%20like%20to%20discuss%20a%20project%20with%20Mhykey%20Labs.%0A%0A"
+          class="whatsapp-btn" target="_blank" rel="noopener noreferrer">Discuss Your Project</a>
+      </div>
+    </section>
+
+    <section class="section-about">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="about.png" alt="Mhykey Labs">
+        </div>
+        <div class="about-text">
+          <h2>AT MHYKEY LABS</h2>
+          <p> We believe that both learning and service delivery should be straightforward and effective. That is why we
+            maintain a simple communication system that allows us to interact directly with our clients and students.
+          </p>
+          <a href="https://wa.me/2348060260581" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i> Discuss</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-contact">
+      <h3>Get In Touch</h3>
+
+      <p>
+        Have a question, idea, or project in mind? Mhykey Labs is open to conversations, collaborations, and
+        opportunities.
+        Whether you're interested in our services, learning programs, or just want to explore possibilities, we're here
+        to listen.
+      </p>
+
+      <p>
+        Reach out to us to make an inquiry, discuss your needs, or learn more about how we can support you.
+        We’re always ready to connect and provide clear, helpful guidance.
+      </p>
+
+      <a href="https://wa.me/2348060260581" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> Work With Us</a>
+      </a>
+    </section>
+
+
+
+
+  </main>
+
+  <footer>
+
+    <!-- Address & Contact -->
+    <div class="footer-contact">
+      <p>
+        15, Afoni Street, Adegbayi, Ibadan, Oyo State, Nigeria. 200109<br>
+        +234 806 026 0581<br>
+        <a href="mailto:mhykeylabs@gmail.com">mhykeylabs@gmail.com</a>
+      </p>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="footer-social">
+      <a href="https://www.facebook.com/share/1Dndsrx3Yz/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+      <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/2348060260581" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Copyright -->
+    <p class="footer-copy">
+      Mhykey Labs Ltd &copy; 2026. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 }); // triggers when 20% of section is visible
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const closeBtn = document.querySelector('.close-btn');
+
+    menuToggle.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
+    });
+
+  </script>
+</body>
+
+</html>
