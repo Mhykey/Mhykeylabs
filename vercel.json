@@ -1,31 +1,19 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": true,
-  "redirects": [
-    {
-      "source": "/index.html",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/about.html",
-      "destination": "/about/",
-      "statusCode": 301
-    },
-    {
-      "source": "/research.html",
-      "destination": "/research/",
-      "statusCode": 301
-    },
-    {
-      "source": "/what-we-do.html",
-      "destination": "/what-we-do/",
-      "statusCode": 301
-    },
-    {
-      "source": "/contact.html",
-      "destination": "/contact/",
-      "statusCode": 301
-    }
-  ]
+"cleanUrls": true,
+"trailingSlash": true,
+"redirects": [
+{ "source": "/index.html", "destination": "/", "statusCode": 301 },
+{ "source": "/about.html", "destination": "/about/", "statusCode": 301 },
+{ "source": "/research.html", "destination": "/research/", "statusCode": 301 },
+{ "source": "/what-we-do.html","destination": "/what-we-do/", "statusCode": 301 },
+{ "source": "/contact.html", "destination": "/contact/", "statusCode": 301 },
+{ "source": "/learn", "destination": "/research/", "statusCode": 301 },
+{ "source": "/learn/:path*", "destination": "/research/", "statusCode": 301 },
+{ "source": "/services", "destination": "/what-we-do/", "statusCode": 301 },
+{ "source": "/services/:path*","destination": "/what-we-do/", "statusCode": 301 },
+{ "source": "/find-student", "destination": "/research/", "statusCode": 301 },
+{ "source": "/find-student/:path*","destination": "/research/","statusCode": 301 },
+{ "source": "/services%20copy.html", "destination": "/what-we-do/", "statusCode": 301 },
+{ "source": "/services%20copy.html/:path*", "destination":"/what-we-do/", "statusCode":301}
+]
 }
